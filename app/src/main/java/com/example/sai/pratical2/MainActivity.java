@@ -1,5 +1,6 @@
 package com.example.sai.pratical2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
                 if(emailEditText.getText().toString().equals("")||passwordEditText.getText().toString().equals("")){
                     Toast.makeText(MainActivity.this,"Please fill all the fields",Toast.LENGTH_SHORT).show();
                 }else {
+
+                    Intent intent = new Intent(MainActivity.this,loginScreem.class);
+                    intent.putExtra("Name",emailEditText.getText().toString());
+                    startActivity(intent);
                     Toast.makeText(MainActivity.this,"Welcome - " + emailEditText.getText().toString() + " you are successfully signed in ",Toast.LENGTH_SHORT).show();
                 }
             }
